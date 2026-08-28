@@ -62,12 +62,6 @@ export default function Chatbot() {
     }
   }, [messages, isLoading]);
 
-  useEffect(() => {
-    if (!isLoading) {
-      inputRef.current?.focus();
-    }
-  }, [isLoading]);
-
   // Section entrance animation
   useEffect(() => {
     const ctx = gsap.context(() => {
