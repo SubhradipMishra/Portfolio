@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { Download } from 'lucide-react';
 import AmbientBackground from './AmbientBackground';
 
 export default function Hero() {
@@ -60,18 +61,33 @@ export default function Hero() {
           </div>
         </h1>
         
-        <div className="hero-line border border-structure-grey bg-void/80 backdrop-blur-md p-4 flex flex-col md:flex-row items-center gap-6">
-          <span className="font-mono text-muted text-xs tracking-widest uppercase flex items-center gap-2">
-            <div className="w-2 h-2 bg-white animate-pulse"></div>
-            Status: Online
-          </span>
-          <div className="hidden md:block w-px h-4 bg-structure-grey"></div>
-          <p 
-            ref={subRef}
-            className="font-mono text-off-white text-sm md:text-base uppercase tracking-widest"
+        <div className="hero-line flex flex-col md:flex-row items-center gap-4">
+          <div className="border border-structure-grey bg-void/80 backdrop-blur-md px-5 py-3 flex flex-col md:flex-row items-center gap-4 md:gap-6 shadow-2xl">
+            <span className="font-mono text-muted text-xs tracking-widest uppercase flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+              Status: Online
+            </span>
+            <div className="hidden md:block w-px h-4 bg-structure-grey"></div>
+            <p 
+              ref={subRef}
+              className="font-mono text-off-white text-sm md:text-base uppercase tracking-widest"
+            >
+              Subhradip Mishra <span className="text-muted-grey mx-2">/</span> Full-Stack <span className="text-muted-grey mx-2">/</span> DevOps
+            </p>
+          </div>
+
+          <a 
+            href="/subhradip_resume.pdf"
+            download="Subhradip_Mishra_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative font-mono text-xs uppercase tracking-widest px-6 py-3 border border-white/20 bg-void/90 hover:bg-white hover:text-black text-off-white backdrop-blur-md transition-all duration-300 flex items-center gap-3 overflow-hidden shadow-2xl hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] cursor-pointer"
           >
-            Subhradip Mishra <span className="text-muted-grey mx-2">/</span> Full-Stack <span className="text-muted-grey mx-2">/</span> DevOps
-          </p>
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <Download className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform duration-300 text-cyan-400 group-hover:text-black" />
+            <span>RESUME</span>
+            <span className="text-[10px] text-muted-grey group-hover:text-black/60 font-mono">[PDF]</span>
+          </a>
         </div>
       </div>
       
